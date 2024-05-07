@@ -66,6 +66,22 @@ output:
 
 ```
 
+If you want to write more than one vignette, you may want to control
+the order that they are displayed on the package homepage and when the
+`browseVignettes()` function is called. Vignettes will show up in
+alphabetical order, which may not be a logical ordering without
+further specification. One approach to controlling the order of the
+vignettes is to use a number in the `VignettteIndexEntry` setting,
+e.g. using numbers `1-9`, if you have a single digit number of
+vignettes, or `01-99` if you have ten or more vignettes. For example,
+the first vignette could specify in the header:
+
+```
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{1. Quick start to MyPackage}
+  %\VignetteEncoding{UTF-8}
+```
 
 Some best practices and requirements for writing _Bioconductor_ vignettes are
 detailed in the following sections.
